@@ -1,0 +1,14 @@
+FROM node:latest
+
+# Copy the package.json and server.js into the /app directory in the container
+COPY package.json /app/
+COPY server.js /app/
+
+# Set the working directory inside the container to /app
+WORKDIR /app
+
+# Install dependencies defined in package.json
+RUN npm install
+
+# Command to run the server
+CMD ["node", "server.js"]
