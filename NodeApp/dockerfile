@@ -9,6 +9,6 @@ WORKDIR /app
 
 # Install dependencies defined in package.json
 RUN npm install
-
+EXPOSE 8080
 # Command to run the server
 CMD ["node", "server.js"]
