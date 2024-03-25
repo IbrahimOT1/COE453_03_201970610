@@ -1,0 +1,132 @@
+swagger: "2.0"
+info:
+  title: CalculatorAPI
+  description: Simple calculator.
+  version: 1.0.0
+
+host: myapi.apigateway.project-2-418313.cloud.goog
+basePath: /
+schemes:
+  - https
+  - http
+
+paths:
+  /add:
+    get:
+      operationId: addfunction
+      summary: Perform addition between two integers.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      parameters:
+        - name: X
+          in: query
+          required: true
+          type: integer
+        - name: Y
+          in: query
+          required: true
+          type: integer
+      x-google-backend:
+        address: https://us-central1-project-2-418313.cloudfunctions.net/addFunction
+
+  /sub:
+    get:
+      operationId: subFunction
+      summary: Perform subtraction between two integers.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      parameters:
+        - name: X
+          in: query
+          required: true
+          type: integer
+        - name: Y
+          in: query
+          required: true
+          type: integer
+      x-google-backend:
+        address: https://us-central1-project-2-418313.cloudfunctions.net/subFunction
+
+  /mul:
+    get:
+      operationId: mulFunction
+      summary: Perform multiplication between two integers.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      parameters:
+        - name: X
+          in: query
+          required: true
+          type: integer
+        - name: Y
+          in: query
+          required: true
+          type: integer
+      x-google-backend:
+        address: https://us-central1-project-2-418313.cloudfunctions.net/mulFunction
+
+  /div:
+    get:
+      operationId: divFunction
+      summary: Perform division between two integers.
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              X:
+                type: integer
+              Y:
+                type: integer
+              Result:
+                type: integer
+      parameters:
+        - name: X
+          in: query
+          required: true
+          type: integer
+        - name: Y
+          in: query
+          required: true
+          type: integer
+      x-google-backend:
+        address: https://us-central1-project-2-418313.cloudfunctions.net/divFunction
