@@ -21,7 +21,7 @@ app.post('/mul', (req, res) => {
   res.json({ X, Y, Result: X * Y });
 });
 
-// Endpoint for division, with division by zero check
+// Endpoint for division
 app.post('/div', (req, res) => {
   const { X, Y } = req.body;
 res.json({ X, Y, Result: X / Y });
